@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="GBOS-SCC-FileGeneration" enabled="true">
+      <stringProp name="TestPlan.comments">602294; 107597;51425;20653 ;9443;10446;505440;501270;821340;631800
+OldDate: 20210224;20210512</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="RecordCount" elementType="Argument">
+            <stringProp name="Argument.name">RecordCount</stringProp>
+            <stringProp name="Argument.value">${__P(RecordCount,631800)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DataFileFolder" elementType="Argument">
+            <stringProp name="Argument.name">DataFileFolder</stringProp>
+            <stringProp name="Argument.value">${__P(DataFileFolder,C:/Performance/data)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="TemplateFile_TransactionIn" elementType="Argument">
+            <stringProp name="Argument.name">TemplateFile_TransactionIn</stringProp>
+            <stringProp name="Argument.value">${__P(TemplateFile_TransactionIn,P1CPIH.100K.txt)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="TemplateFile_Statement" elementType="Argument">
+            <stringProp name="Argument.name">TemplateFile_Statement</stringProp>
+            <stringProp name="Argument.value">${__P(TemplateFile_Statement,P1CStmtVend.600k.txt)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CreateDate" elementType="Argument">
+            <stringProp name="Argument.name">CreateDate</stringProp>
+            <stringProp name="Argument.value">${__P(CreateDate,2021-01-23)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Workspace_Path" elementType="Argument">
+            <stringProp name="Argument.name">Workspace_Path</stringProp>
+            <stringProp name="Argument.value">${__P(Workspace_Path,C:\QA\Performance\Jmeter\GBOS\DataGenerator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NumberOfAccount" elementType="Argument">
+            <stringProp name="Argument.name">NumberOfAccount</stringProp>
+            <stringProp name="Argument.value">${__P(NumberOfAccount,500000)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RampUp_Period" elementType="Argument">
+            <stringProp name="Argument.name">RampUp_Period</stringProp>
+            <stringProp name="Argument.value">${__P(RampUp_Period,5)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NumberOfThreads_Gen" elementType="Argument">
+            <stringProp name="Argument.name">NumberOfThreads_Gen</stringProp>
+            <stringProp name="Argument.value">${__P(NumberOfThreads_Gen,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OldDate" elementType="Argument">
+            <stringProp name="Argument.name">OldDate</stringProp>
+            <stringProp name="Argument.value">${__P(OldDate,20210512)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GetAccountController" elementType="Argument">
+            <stringProp name="Argument.name">GetAccountController</stringProp>
+            <stringProp name="Argument.value">${__P(GetAccountController,AccountToken_Only)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AccountLoopCount" elementType="Argument">
+            <stringProp name="Argument.name">AccountLoopCount</stringProp>
+            <stringProp name="Argument.value">${__P(AccountLoopCount,24)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="DefaultAccountToken" elementType="Argument">
+            <stringProp name="Argument.name">DefaultAccountToken</stringProp>
+            <stringProp name="Argument.value">7123459000061304</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DB_RESULT_FILE_NAME" elementType="Argument">
+            <stringProp name="Argument.name">DB_RESULT_FILE_NAME</stringProp>
+            <stringProp name="Argument.value">${__P(DB_RESULT_FILE_NAME, account-trans-from-db.csv)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GBOSDB" elementType="Argument">
+            <stringProp name="Argument.name">GBOSDB</stringProp>
+            <stringProp name="Argument.value">PFBOSDBAG.awsnp.gdotawsnp.com</stringProp>
+            <stringProp name="Argument.desc">QABOSDBAG.awsnp.gdotawsnp.com;PFBOSDBAG.awsnp.gdotawsnp.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="GBOSDatabase" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery"></stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">GBOS</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://${GBOSDB}:1433;databaseName=GBOS</stringProp>
+        <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">G33Nff4%$^</stringProp>
+        <stringProp name="poolMax">0</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">qa_automation</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="initQuery"></stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Get AccountId from DB - TransactionIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Delete existing file" enabled="true">
+          <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.io.FileUtils;
+
+//log.info(vars.get (&quot;DataFileFolder&quot;));
+
+try{
+	File file = new File(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;${DB_RESULT_FILE_NAME}&quot;);
+
+	List files = FileUtils.listFiles(new File(vars.get (&quot;Workspace_Path&quot;) + File.separator + &quot;multi-thread&quot;), new String[]{&quot;csv&quot;}, true);
+	for (File file : files) {
+	file.delete();
+	}
+
+	if (file.exists())
+	{
+		//FileServer.getFileServer().closeFile(vars.get (&quot;WORKSPACE_PATH&quot;) + File.separator  + &quot;${RESULT_FILE_NAME_P}&quot;);
+		//FileServer.getFileServer().closeFile(vars.get (&quot;WORKSPACE_PATH&quot;) + File.separator  + &quot;${RESULT_FILE_NAME}&quot;);
+		FileServer.getFileServer().closeFiles();
+		
+		//FileUtils.deleteQuietly(file);
+	 	//FileDeleteStrategy.FORCE.delete(file);
+	 	System.gc();
+	 	file.setWritable(true);
+	 	
+	 	if (!file.delete()) 
+       	{ 
+                log.error(&quot;Couldn&apos;t delete file&quot;); 
+        	} 
+        	else 
+        	{ 
+                log.info(&quot;Successfully deleted file: &quot; + file.getName()); 
+        	}
+	}
+} catch (FileNotFoundException e) {
+    log.error(&quot;FileNotFoundException in Delete csv files&quot;, e);
+    //e.printStackTrace();
+} catch (IOException e) {
+    log.error(&quot;IOException in Delete csv files&quot;, e);
+}</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Get AccountData from db" enabled="true">
+          <stringProp name="dataSource">GBOS</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">use gbos
+select top ${NumberOfAccount} a.accountToken, pt.transactionIdentifier
+from Account a
+inner join Product p (nolock) on (p.ProductKey = a.ProductKey)
+inner join Program pg (nolock) on (pg.ProgramKey = p.ProgramKey)
+inner join AccountStatus s (nolock) on (a.AccountStatusKey = s.AccountStatusKey)
+inner join AccountHolder h (nolock) on (h.AccountKey = a.AccountKey)
+inner join AccountBalance ab (nolock) on (ab.AccountKey = a.AccountKey) and ab.AccountBalanceTypeKey=1
+inner join Currency cur (nolock) on (cur.CurrencyKey = ab.CurrencyKey)
+inner join ConsumerProfile cp (nolock) on (cp.ConsumerProfileKey = h.ConsumerProfileKey)
+inner join ConsumerProfileidentity cpi (nolock) on (cpi.ConsumerProfileKey = cp.ConsumerProfileKey)
+inner join ConsumerProfileEmail cpe (nolock) on (cp.ConsumerProfileKey=cpe.ConsumerProfileKey and cpe.EmailTypeKey=1)
+inner join ConsumerProfilePhone cpp (nolock) on cpp.ConsumerProfileKey = cp.ConsumerProfileKey
+inner join AccountHolder_PaymentIdentifier ap (nolock) on (ap.AccountHolderKey = h.AccountHolderKey)
+inner join PaymentIdentifier pid (nolock) on (pid.PaymentIdentifierKey = ap.PaymentIdentifierKey)
+inner join PaymentIdentifierStatus pids (nolock) on (pids.PaymentIdentifierStatusKey = pid.PaymentIdentifierStatusKey)
+inner join PaymentInstrument pin (nolock) on (pin.PaymentIdentifierKey = pid.PaymentIdentifierKey)
+inner join PaymentInstrumentType pint (nolock) on (pint.PaymentInstrumentTypeKey = pin.PaymentInstrumentTypeKey)
+inner join PaymentInstrumentStatus pins (nolock) on (pins.PaymentInstrumentStatusKey = pin.PaymentInstrumentStatusKey)
+left join AccountLink al1 (nolock) on al1.PrimaryAccountKey = a.AccountKey
+left join AccountLink al2 (nolock) on al2.LinkedAccountKey = a.AccountKey
+inner join PostinternalTransaction pt (nolock) on a.accountidentifier = pt.accountidentifier
+where a.createdate &gt; &apos;${CreateDate}&apos;
+--and al1.AccountLinkKey is null 
+--and al2.AccountLinkKey is null
+--and pint.PaymentInstrumentType=&apos;EMV&apos;
+--and ab.AvailableBalance&gt;500
+and p.ProductCode in (&apos;S40006&apos;, &apos;40006&apos;)
+and (cpe.Email like &apos;%scc@gdqa.us&apos; OR cpe.Email like &apos;%sccviv@gdqa.us&apos; OR cpe.Email like &apos;%ssc@gdqa.us&apos;)
+and a.accounttoken is not null
+order by A.CreateDate desc</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames">accountToken,transactionIdentifier</stringProp>
+          <stringProp name="resultVariable">AccountList</stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
+        <hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to output file" enabled="true">
+            <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;${DB_RESULT_FILE_NAME}&quot;,true);
+
+for (var row : vars.getObject(&quot;AccountList&quot;))
+{
+	fstream.write(row.get(&quot;accountToken&quot;)  + &quot;,&quot; + row.get(&quot;transactionIdentifier&quot;) + System.getProperty(&quot;line.separator&quot;));
+}
+fstream.close();</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Multi-Thread Data Generator - TransactionIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${NumberOfThreads_Gen}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RampUp_Period}</stringProp>
+        <longProp name="ThreadGroup.start_time">1498168968000</longProp>
+        <longProp name="ThreadGroup.end_time">1498168968000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="OUTPUT_FILE" elementType="Argument">
+              <stringProp name="Argument.name">OUTPUT_FILE</stringProp>
+              <stringProp name="Argument.value">multi-thread-out</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="INPUT_FILE" elementType="Argument">
+              <stringProp name="Argument.name">INPUT_FILE</stringProp>
+              <stringProp name="Argument.value">${Workspace_Path}\\${DB_RESULT_FILE_NAME}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">${INPUT_FILE}</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames">accountToken,transactionIdentifier</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EncodeGuid" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;input&quot;: &quot;${transactionIdentifier}&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://g0qatools01/GDQATools/GDQA_IPSSimulator/GDQA_IPSSimulator.Assistant.WebApi/encodeGuid</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">EncodedTransactionIdentifier</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.output</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="InsertStatementTransaction" enabled="true">
+            <stringProp name="dataSource">GBOS</stringProp>
+            <stringProp name="query">Declare @statementtranskey bigint=0;
+
+Select @statementtranskey=StatementTransactionkey from statementtransaction where transactionidentifier =&apos;${transactionIdentifier}&apos;
+print @statementtranskey
+
+if @statementtranskey&lt;=0
+begin
+	print &apos;new, not found&apos;
+	INSERT into statementtransaction 
+	(createdate, changedate, changeby, statementSummaryKey, transactionidentifier, externaltransactionreferenceid, postdate, statementtransactiontypekey)
+	values(GETDATE(), getdate(), Current_user, null, &apos;${transactionIdentifier}&apos;, null, Getdate(), 2)
+end
+else
+	print &apos;already exist&apos;
+</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Callable Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultSetMaxRows"></stringProp>
+            <stringProp name="resultVariable"></stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to OUTPUT file-1" enabled="true">
+          <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+try{
+String accountToken = &quot;${accountToken}&quot;;
+String encodedTransId = &quot;${EncodedTransactionIdentifier}&quot;;
+
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;multi-thread&quot; + File.separator + &quot;${OUTPUT_FILE}&quot; + ctx.getThreadNum() + &quot;.csv&quot;,true);
+fstream.write(accountToken + &quot;,&quot; + encodedTransId + System.getProperty(&quot;line.separator&quot;));
+fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Combine and CopyToDataFileFolder - TransactionIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="SetDataFileName" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">vars.put(&quot;DATA_FILE_NAME&quot;, &quot;scc_account_trans.csv&quot;);</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Combine Multi-Thread files into one" enabled="true">
+          <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+          <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+          <stringProp name="SystemSampler.command">cmd.exe</stringProp>
+          <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">/c</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">copy /b</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${Workspace_Path}\multi-thread\multi-thread-out*</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${Workspace_Path}\multi-thread\\${DATA_FILE_NAME}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SystemSampler.directory">${Workspace_Path}\multi-thread</stringProp>
+        </SystemSampler>
+        <hashTree/>
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Copy data file to shared folder-1" enabled="true">
+          <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+          <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+          <stringProp name="SystemSampler.command">cmd.exe</stringProp>
+          <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">/c</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">copy /b /y</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${Workspace_Path}\multi-thread\\${DATA_FILE_NAME}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${DataFileFolder}\\${DATA_FILE_NAME}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SystemSampler.directory">${Workspace_Path}</stringProp>
+        </SystemSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TG - FileProcessing-TransactionIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GenerateTransactionInFile-old" enabled="false">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.lang.RandomStringUtils;
+//log.info(&quot;${eachline}&quot;);
+
+FileWriter fstream = new FileWriter(&quot;${DataFileFolder}&quot; +&quot;/P1CPIH.&quot; + &quot;${__time(MMddYY,)}&quot; +&quot;.txt&quot;);
+File sccSource = new File(&quot;${DataFileFolder}&quot; + &quot;/SCC/&quot; + &quot;${TemplateFile_TransactionIn}&quot;); 
+
+File accountTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/scc_fis_accountList.csv&quot;);
+
+try {
+   FileInputStream inputStream = new FileInputStream(sccSource);
+   Scanner sc = new Scanner(inputStream, &quot;UTF-8&quot;);
+   FileInputStream inputStream_c = new FileInputStream(accountTokenFile);
+   Scanner sc_c = new Scanner(inputStream_c, &quot;UTF-8&quot;);
+   
+ 
+  def tempAccountToken = &quot;${DefaultAccountToken}&quot;;
+  tempAccountToken = tempAccountToken.padRight(16, &quot; &quot;);
+  def totalRecCount = (&quot;${RecordCount}&quot;).padLeft(8,&apos;0&apos;);	//&quot;0000007&quot;;
+  int intTotalRecCount = Integer.parseInt(&quot;${RecordCount}&quot;);
+
+  def count = 0;// &amp;&amp; count&lt;30
+  def currentTime =&quot;${__time(YYMMddhhmmss,)}&quot;;		//&quot;210202&quot; + &quot;${__time(hhmmss,)}&quot;
+  def tempLst;
+
+  while (sc.hasNextLine() &amp;&amp; count &lt; intTotalRecCount+1) {
+      String line = sc.nextLine();
+      line=line.replaceAll(&quot;20210224&quot;,&quot;${__time(yyyyMMdd,)}&quot;)
+     //if(line.size()&gt;2000)
+	//		line= line.substring(0, 2000);
+	
+	if(line.startsWith(&quot;2X&quot;))
+     {
+     	//log.info(line);
+     	String subStr = line.substring(28, 40);
+		line = line.substring(0, 2) + tempAccountToken + line.substring(18);  	//line.substring(0, 2)
+
+		//log.info (&quot;subStr:&quot; + subStr);
+      	if(subStr.trim() == &quot;+0000+090+00&quot;)
+      	{
+      		log.info (&quot;contains:&quot; + subStr);
+      		if(sc_c.hasNextLine()){
+      			tempAccountToken = sc_c.nextLine();
+      			log.info(&quot;tempAccountToken:&quot; + tempAccountToken);}
+      	}else{
+      		def tempExtTransRefID = RandomStringUtils.randomNumeric(10) + RandomStringUtils.randomNumeric(13);
+      		line = line.substring(0, 132) + tempExtTransRefID.trim() + line.substring(155);  
+      		//log.info (&quot;line after replacing tempExtTransRefID:&quot; + line);
+      	}
+     }
+	fstream.write(line + System.getProperty(&quot;line.separator&quot;));
+	count++;
+	
+   } 
+
+def footer = &quot;9999999999999999999999999999999999GF050D  &quot; + totalRecCount + &quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  &quot;;
+   fstream.write(footer + System.getProperty(&quot;line.separator&quot;));
+   
+   inputStream.close();
+   fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GenerateTransactionInFile-new" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.lang.RandomStringUtils;
+//log.info(&quot;${eachline}&quot;);
+
+FileWriter fstream = new FileWriter(&quot;${DataFileFolder}&quot; +&quot;/P1CPIH.&quot; + &quot;${__time(MMddYY,)}&quot; +&quot;.txt&quot;);
+File sccSource = new File(&quot;${DataFileFolder}&quot; + &quot;/SCC/&quot; + &quot;${TemplateFile_TransactionIn}&quot;); 
+//scc_account_trans.csv
+File accountTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/scc_account_trans-transactionin-0502.csv&quot;);
+
+try {
+   FileInputStream inputStream = new FileInputStream(sccSource);
+   Scanner sc = new Scanner(inputStream, &quot;UTF-8&quot;);
+   FileInputStream inputStream_c = new FileInputStream(accountTokenFile);
+   Scanner sc_c = new Scanner(inputStream_c, &quot;UTF-8&quot;);
+   
+ 
+  def tempAccountToken = &quot;${DefaultAccountToken}&quot;;
+  tempAccountToken = tempAccountToken.padRight(16, &quot; &quot;);
+  def totalRecCount = (&quot;${RecordCount}&quot;).padLeft(8,&apos;0&apos;);	//&quot;0000007&quot;;
+  int intTotalRecCount = Integer.parseInt(&quot;${RecordCount}&quot;);
+
+  def count = 0;// &amp;&amp; count&lt;30
+  def currentTime =&quot;${__time(YYMMddhhmmss,)}&quot;;		//&quot;210202&quot; + &quot;${__time(hhmmss,)}&quot;
+  def tempLst;
+
+  while (sc.hasNextLine() &amp;&amp; count &lt; intTotalRecCount+1) {
+      String line = sc.nextLine();
+      line=line.replaceAll(&quot;${OldDate}&quot;,&quot;${__time(yyyyMMdd,)}&quot;)
+     //if(line.size()&gt;2000)
+	//		line= line.substring(0, 2000);
+	
+	if(line.startsWith(&quot;2X&quot;))
+     {
+     	//log.info(line);
+     	String subStr = line.substring(28, 40);
+		line = line.substring(0, 2) + tempAccountToken + line.substring(18);  	//line.substring(0, 2)
+
+		if(sc_c.hasNextLine()){	
+      		tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      		tempAccountToken = tempLst[0].trim().padRight(16, &quot; &quot;);
+      		log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      		transIdToken = tempLst[1].trim();
+      		log.info(&quot;transIdToken:&quot; + transIdToken);
+      	}
+      			
+      	if(subStr.trim() == &quot;+0000+090+00&quot;)
+      	{
+      		log.info (&quot;contains:&quot; + subStr);
+      	}else{
+      		def tempExtTransRefID = RandomStringUtils.randomNumeric(10) + RandomStringUtils.randomNumeric(13);
+      		line = line.substring(0, 131) + tempExtTransRefID.trim() + line.substring(154);  
+
+      		line = line.substring(0, 158) + transIdToken + line.substring(181);
+      		//log.info (&quot;line after replacing tempExtTransRefID:&quot; + line);
+      	}
+     }
+	fstream.write(line + System.getProperty(&quot;line.separator&quot;));
+	count++;
+	
+   } 
+
+def footer = &quot;9999999999999999999999999999999999GF050D  &quot; + totalRecCount + &quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  &quot;;
+   fstream.write(footer + System.getProperty(&quot;line.separator&quot;));
+   
+   inputStream.close();
+   fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Get AccountId from DB - StatementIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Delete existing file" enabled="true">
+          <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.io.FileUtils;
+
+//log.info(vars.get (&quot;DataFileFolder&quot;));
+
+try{
+	File file = new File(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;${DB_RESULT_FILE_NAME}&quot;);
+
+	List files = FileUtils.listFiles(new File(vars.get (&quot;Workspace_Path&quot;) + File.separator + &quot;multi-thread&quot;), new String[]{&quot;csv&quot;}, true);
+	for (File file : files) {
+	file.delete();
+	}
+
+	if (file.exists())
+	{
+		//FileServer.getFileServer().closeFile(vars.get (&quot;WORKSPACE_PATH&quot;) + File.separator  + &quot;${RESULT_FILE_NAME_P}&quot;);
+		//FileServer.getFileServer().closeFile(vars.get (&quot;WORKSPACE_PATH&quot;) + File.separator  + &quot;${RESULT_FILE_NAME}&quot;);
+		FileServer.getFileServer().closeFiles();
+		
+		//FileUtils.deleteQuietly(file);
+	 	//FileDeleteStrategy.FORCE.delete(file);
+	 	System.gc();
+	 	file.setWritable(true);
+	 	
+	 	if (!file.delete()) 
+       	{ 
+                log.error(&quot;Couldn&apos;t delete file&quot;); 
+        	} 
+        	else 
+        	{ 
+                log.info(&quot;Successfully deleted file: &quot; + file.getName()); 
+        	}
+	}
+} catch (FileNotFoundException e) {
+    log.error(&quot;FileNotFoundException in Delete csv files&quot;, e);
+    //e.printStackTrace();
+} catch (IOException e) {
+    log.error(&quot;IOException in Delete csv files&quot;, e);
+}</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller" enabled="true">
+          <stringProp name="SwitchController.value">${GetAccountController}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_And_TransToken" enabled="true"/>
+          <hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Get AccountData from db-Specify transaction count" enabled="true">
+              <stringProp name="dataSource">GBOS</stringProp>
+              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="query">select  top ${NumberOfAccount}  aa.accountToken, pin.transactionIdentifier
+From Account aa with(nolock)
+inner join PostInternalTransaction pin with(nolock)
+on aa.AccountIdentifier = pin.AccountIdentifier
+where aa.accounttoken in (
+select a.accounttoken
+from Account a
+inner join Product p (nolock) on (p.ProductKey = a.ProductKey)
+inner join Program pg (nolock) on (pg.ProgramKey = p.ProgramKey)
+inner join AccountStatus s (nolock) on (a.AccountStatusKey = s.AccountStatusKey)
+inner join AccountHolder h (nolock) on (h.AccountKey = a.AccountKey)
+inner join AccountBalance ab (nolock) on (ab.AccountKey = a.AccountKey) and ab.AccountBalanceTypeKey=1
+inner join Currency cur (nolock) on (cur.CurrencyKey = ab.CurrencyKey)
+inner join ConsumerProfile cp (nolock) on (cp.ConsumerProfileKey = h.ConsumerProfileKey)
+inner join ConsumerProfileidentity cpi (nolock) on (cpi.ConsumerProfileKey = cp.ConsumerProfileKey)
+inner join ConsumerProfileEmail cpe (nolock) on (cp.ConsumerProfileKey=cpe.ConsumerProfileKey and cpe.EmailTypeKey=1)
+inner join ConsumerProfilePhone cpp (nolock) on cpp.ConsumerProfileKey = cp.ConsumerProfileKey
+inner join AccountHolder_PaymentIdentifier ap (nolock) on (ap.AccountHolderKey = h.AccountHolderKey)
+inner join PaymentIdentifier pid (nolock) on (pid.PaymentIdentifierKey = ap.PaymentIdentifierKey)
+inner join PaymentIdentifierStatus pids (nolock) on (pids.PaymentIdentifierStatusKey = pid.PaymentIdentifierStatusKey)
+inner join PaymentInstrument pin (nolock) on (pin.PaymentIdentifierKey = pid.PaymentIdentifierKey)
+inner join PaymentInstrumentType pint (nolock) on (pint.PaymentInstrumentTypeKey = pin.PaymentInstrumentTypeKey)
+inner join PaymentInstrumentStatus pins (nolock) on (pins.PaymentInstrumentStatusKey = pin.PaymentInstrumentStatusKey)
+left join AccountLink al1 (nolock) on al1.PrimaryAccountKey = a.AccountKey
+left join AccountLink al2 (nolock) on al2.LinkedAccountKey = a.AccountKey
+inner join PostinternalTransaction pt (nolock) on a.accountidentifier = pt.accountidentifier
+where a.createdate &gt; &apos;2021-01-01&apos;
+--and al1.AccountLinkKey is null 
+--and al2.AccountLinkKey is null
+--and pint.PaymentInstrumentType=&apos;EMV&apos;
+--and ab.AvailableBalance&gt;500
+and p.ProductCode in (&apos;S40006&apos;, &apos;40006&apos;)
+and (cpe.Email like &apos;%scc@gdqa.us&apos; OR cpe.Email like &apos;%sccviv@gdqa.us&apos; OR cpe.Email like &apos;%ssc@gdqa.us&apos;)
+and a.accounttoken is not null
+group by a.accounttoken
+having count(pt.transactionIdentifier)=10)
+order by aa.accounttoken </stringProp>
+              <stringProp name="queryArguments"></stringProp>
+              <stringProp name="queryArgumentsTypes"></stringProp>
+              <stringProp name="variableNames">accountToken,transactionIdentifier</stringProp>
+              <stringProp name="resultVariable">AccountList</stringProp>
+              <stringProp name="queryTimeout"></stringProp>
+              <stringProp name="resultSetHandler">Store as String</stringProp>
+              <stringProp name="resultSetMaxRows"></stringProp>
+            </JDBCSampler>
+            <hashTree/>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+              <boolProp name="LoopController.continue_forever">true</boolProp>
+              <stringProp name="LoopController.loops">1</stringProp>
+            </LoopController>
+            <hashTree>
+              <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to output file" enabled="true">
+                <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;${DB_RESULT_FILE_NAME}&quot;,true);
+
+for (var row : vars.getObject(&quot;AccountList&quot;))
+{
+	fstream.write(row.get(&quot;accountToken&quot;) + System.getProperty(&quot;line.separator&quot;));
+}
+fstream.close();</stringProp>
+                <stringProp name="BeanShellSampler.filename"></stringProp>
+                <stringProp name="BeanShellSampler.parameters"></stringProp>
+                <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+              </BeanShellSampler>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_Only" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="DB_ACCOUNT_FILE_NAME" elementType="Argument">
+                  <stringProp name="Argument.name">DB_ACCOUNT_FILE_NAME</stringProp>
+                  <stringProp name="Argument.value">sccAccountToken.csv</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Get AccountData from DB" enabled="true">
+              <stringProp name="dataSource">GBOS</stringProp>
+              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="query">select  distinct top ${NumberOfAccount} a.accountToken
+from Account a
+inner join Product p (nolock) on (p.ProductKey = a.ProductKey)
+inner join Program pg (nolock) on (pg.ProgramKey = p.ProgramKey)
+inner join AccountStatus s (nolock) on (a.AccountStatusKey = s.AccountStatusKey)
+inner join AccountHolder h (nolock) on (h.AccountKey = a.AccountKey)
+inner join AccountBalance ab (nolock) on (ab.AccountKey = a.AccountKey) and ab.AccountBalanceTypeKey=1
+inner join Currency cur (nolock) on (cur.CurrencyKey = ab.CurrencyKey)
+inner join ConsumerProfile cp (nolock) on (cp.ConsumerProfileKey = h.ConsumerProfileKey)
+inner join ConsumerProfileidentity cpi (nolock) on (cpi.ConsumerProfileKey = cp.ConsumerProfileKey)
+inner join ConsumerProfileEmail cpe (nolock) on (cp.ConsumerProfileKey=cpe.ConsumerProfileKey and cpe.EmailTypeKey=1)
+inner join ConsumerProfilePhone cpp (nolock) on cpp.ConsumerProfileKey = cp.ConsumerProfileKey
+inner join AccountHolder_PaymentIdentifier ap (nolock) on (ap.AccountHolderKey = h.AccountHolderKey)
+inner join PaymentIdentifier pid (nolock) on (pid.PaymentIdentifierKey = ap.PaymentIdentifierKey)
+inner join PaymentIdentifierStatus pids (nolock) on (pids.PaymentIdentifierStatusKey = pid.PaymentIdentifierStatusKey)
+inner join PaymentInstrument pin (nolock) on (pin.PaymentIdentifierKey = pid.PaymentIdentifierKey)
+inner join PaymentInstrumentType pint (nolock) on (pint.PaymentInstrumentTypeKey = pin.PaymentInstrumentTypeKey)
+inner join PaymentInstrumentStatus pins (nolock) on (pins.PaymentInstrumentStatusKey = pin.PaymentInstrumentStatusKey)
+left join AccountLink al1 (nolock) on al1.PrimaryAccountKey = a.AccountKey
+left join AccountLink al2 (nolock) on al2.LinkedAccountKey = a.AccountKey
+where a.createdate &gt; &apos;2021-01-01&apos;
+--and al1.AccountLinkKey is null 
+--and al2.AccountLinkKey is null
+--and pint.PaymentInstrumentType=&apos;EMV&apos;
+--and ab.AvailableBalance&gt;500
+and p.ProductCode in (&apos;S40006&apos;, &apos;40006&apos;)
+and (cpe.Email like &apos;%scc@gdqa.us&apos; OR cpe.Email like &apos;%sccviv@gdqa.us&apos; OR cpe.Email like &apos;%ssc@gdqa.us&apos;)
+and a.accounttoken is not null</stringProp>
+              <stringProp name="queryArguments"></stringProp>
+              <stringProp name="queryArgumentsTypes"></stringProp>
+              <stringProp name="variableNames">accountToken</stringProp>
+              <stringProp name="resultVariable">AccountList</stringProp>
+              <stringProp name="queryTimeout"></stringProp>
+              <stringProp name="resultSetHandler">Store as String</stringProp>
+              <stringProp name="resultSetMaxRows"></stringProp>
+            </JDBCSampler>
+            <hashTree/>
+            <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+              <boolProp name="LoopController.continue_forever">true</boolProp>
+              <stringProp name="LoopController.loops">1</stringProp>
+            </LoopController>
+            <hashTree>
+              <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to output file" enabled="true">
+                <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator  + &quot;${DB_ACCOUNT_FILE_NAME}&quot;,true);
+//int accountLoopCount = Integer.parseInt(vars.get(&quot;AccountLoopCount&quot;));
+
+for (var row : vars.getObject(&quot;AccountList&quot;))
+{
+	//for (int i=0; i&lt;accountLoopCount; i++){
+		fstream.write(row.get(&quot;accountToken&quot;) + System.getProperty(&quot;line.separator&quot;));
+	//}
+}
+fstream.close();</stringProp>
+                <stringProp name="BeanShellSampler.filename"></stringProp>
+                <stringProp name="BeanShellSampler.parameters"></stringProp>
+                <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+              </BeanShellSampler>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Data Generator-AccountToken-TransToken-StatementIn" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RampUp_Period}</stringProp>
+        <longProp name="ThreadGroup.start_time">1498168968000</longProp>
+        <longProp name="ThreadGroup.end_time">1498168968000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller" enabled="true">
+          <stringProp name="SwitchController.value">${GetAccountController}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_And_TransToken" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="OUTPUT_FILE" elementType="Argument">
+                  <stringProp name="Argument.name">OUTPUT_FILE</stringProp>
+                  <stringProp name="Argument.value">scc_account_trans</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="INPUT_FILE" elementType="Argument">
+                  <stringProp name="Argument.name">INPUT_FILE</stringProp>
+                  <stringProp name="Argument.value">${Workspace_Path}\\${DB_RESULT_FILE_NAME}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+              <stringProp name="filename">${INPUT_FILE}</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="variableNames">accountToken</stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">false</boolProp>
+              <boolProp name="stopThread">true</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EncodeGuid" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+  &quot;input&quot;: &quot;${__UUID}&quot;&#xd;
+}&#xd;
+</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">http://g0qatools01/GDQATools/GDQA_IPSSimulator/GDQA_IPSSimulator.Assistant.WebApi/encodeGuid</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">${transactionIdentifier}</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">EncodedTransactionIdentifier</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.output</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="InsertStatementTransaction" enabled="true">
+                <stringProp name="dataSource">GBOS</stringProp>
+                <stringProp name="query">Declare @statementtranskey bigint=0;
+
+Select @statementtranskey=StatementTransactionkey from statementtransaction where transactionidentifier =&apos;${transactionIdentifier}&apos;
+print @statementtranskey
+
+if @statementtranskey&lt;=0
+begin
+	print &apos;new, not found&apos;
+	INSERT into statementtransaction 
+	(createdate, changedate, changeby, statementSummaryKey, transactionidentifier, externaltransactionreferenceid, postdate, statementtransactiontypekey)
+	values(GETDATE(), getdate(), Current_user, null, &apos;${transactionIdentifier}&apos;, null, Getdate(), 2)
+end
+else
+	print &apos;already exist&apos;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="queryTimeout"></stringProp>
+                <stringProp name="queryType">Callable Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as String</stringProp>
+                <stringProp name="resultSetMaxRows"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to OUTPUT file-1" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+try{
+String accountToken = &quot;${accountToken}&quot;;
+String encodedTransId = &quot;${EncodedTransactionIdentifier}&quot;;
+
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator + &quot;${OUTPUT_FILE}&quot; + &quot;.csv&quot;,true);
+fstream.write(accountToken + &quot;,&quot; + encodedTransId + System.getProperty(&quot;line.separator&quot;));
+fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_Only" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="OUTPUT_FILE" elementType="Argument">
+                  <stringProp name="Argument.name">OUTPUT_FILE</stringProp>
+                  <stringProp name="Argument.value">sccTransToken</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="INPUT_FILE" elementType="Argument">
+                  <stringProp name="Argument.name">INPUT_FILE</stringProp>
+                  <stringProp name="Argument.value">${Workspace_Path}\\${DB_RESULT_FILE_NAME}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EncodeGuid" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+  &quot;input&quot;: &quot;${__UUID}&quot;&#xd;
+}&#xd;
+</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">http://g0qatools01/GDQATools/GDQA_IPSSimulator/GDQA_IPSSimulator.Assistant.WebApi/encodeGuid</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">EncodedTransactionIdentifier</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.output</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="InsertStatementTransaction" enabled="true">
+                <stringProp name="dataSource">GBOS</stringProp>
+                <stringProp name="query">Declare @statementtranskey bigint=0;
+
+Select @statementtranskey=StatementTransactionkey from statementtransaction where transactionidentifier =&apos;${transactionIdentifier}&apos;
+print @statementtranskey
+
+if @statementtranskey&lt;=0
+begin
+	print &apos;new, not found&apos;
+	INSERT into statementtransaction 
+	(createdate, changedate, changeby, statementSummaryKey, transactionidentifier, externaltransactionreferenceid, postdate, statementtransactiontypekey)
+	values(GETDATE(), getdate(), Current_user, null, &apos;${transactionIdentifier}&apos;, null, Getdate(), 2)
+end
+else
+	print &apos;already exist&apos;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="queryTimeout"></stringProp>
+                <stringProp name="queryType">Callable Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as String</stringProp>
+                <stringProp name="resultSetMaxRows"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Append results to OUTPUT file-1" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.services.FileServer;
+
+try{
+//String accountToken = &quot;${accountToken}&quot;;
+String encodedTransId = &quot;${EncodedTransactionIdentifier}&quot;;
+
+
+FileWriter fstream = new FileWriter(vars.get (&quot;Workspace_Path&quot;) + File.separator + &quot;${OUTPUT_FILE}&quot; + &quot;.csv&quot;,true);
+fstream.write( encodedTransId + System.getProperty(&quot;line.separator&quot;));
+fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TG - FileProcessing-Statement" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller" enabled="true">
+          <stringProp name="SwitchController.value">${GetAccountController}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_And_TransToken" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GenerateStatementFile" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.lang.RandomStringUtils;
+//log.info(&quot;${eachline}&quot;);
+
+FileWriter fstream = new FileWriter(&quot;${DataFileFolder}&quot; +&quot;/P1CStmtVend.&quot; + &quot;${__time(MMddYY,)}&quot; +&quot;.txt&quot;);
+File sccSource = new File(&quot;${DataFileFolder}&quot; + &quot;/SCC/&quot; + &quot;${TemplateFile_Statement}&quot;); 
+
+File accountTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/scc_account_trans.csv&quot;);
+
+try {
+   FileInputStream inputStream = new FileInputStream(sccSource);
+   Scanner sc = new Scanner(inputStream, &quot;UTF-8&quot;);
+   FileInputStream inputStream_c = new FileInputStream(accountTokenFile);
+   Scanner sc_c = new Scanner(inputStream_c, &quot;UTF-8&quot;);
+   
+ 
+  def tempAccountToken = &quot;${DefaultAccountToken}&quot;;
+  tempAccountToken = tempAccountToken.padRight(16, &quot; &quot;);
+  def totalRecCount = (&quot;${RecordCount}&quot;).padLeft(8,&apos;0&apos;);	//&quot;0000007&quot;;
+  int intTotalRecCount = Integer.parseInt(&quot;${RecordCount}&quot;);
+
+  def count = 0;// &amp;&amp; count&lt;30
+  def currentTime =&quot;${__time(YYMMddhhmmss,)}&quot;;		//&quot;210202&quot; + &quot;${__time(hhmmss,)}&quot;
+  def tempLst;
+
+  while (sc.hasNextLine() &amp;&amp; count &lt; intTotalRecCount+1) {
+      String line = sc.nextLine();
+      line=line.replaceAll(&quot;${OldDate}&quot;,&quot;${__time(yyyyMMdd,)}&quot;)
+     //if(line.size()&gt;2000)
+	//		line= line.substring(0, 2000);
+	
+	if(line.startsWith(&quot;0&quot;))
+     {
+     	//log.info(line);
+     	String subStr_transtype1 = line.substring(271, 279);
+     	String subStr_transtype2 = line.substring(274,279);
+     	//log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+
+		//set token for the first line
+		//line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+		/*String subStr_invalidtranscode= line.substring(43,53);
+		if(subStr_invalidtranscode ==&quot;0009090+00&quot;)
+		{
+			log.info(&quot;vivtest:&quot; + subStr_invalidtranscode);
+			
+			if(sc_c.hasNextLine()){	
+      			tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      			tempAccountToken = tempLst[0].trim().padRight(16, &quot; &quot;);
+      			//log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      			transIdToken = tempLst[1].trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+		}
+		else */
+		if (line.substring(28,37) == &quot;00000000+&quot;){
+			log.info(&quot;vivtest:&quot; + line.substring(28,37));
+			
+			if(sc_c.hasNextLine()){	
+      			tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      			tempAccountToken = tempLst[0].trim().padRight(16, &quot; &quot;);
+      			//log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      			transIdToken = tempLst[1].trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+
+		}else if(subStr_transtype1 == &quot;GDPSTINT&quot; || subStr_transtype2 == &quot;GDPST&quot;)
+		{
+			if(sc_c.hasNextLine()){	
+      			tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      			transIdToken = tempLst[1].trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+		}
+
+		line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+		
+      	if(subStr_transtype1 == &quot;GDPSTINT&quot; || subStr_transtype2 == &quot;GDPST&quot;)
+      	{
+      		log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+      		def tempExtTransRefID = RandomStringUtils.randomNumeric(10) + RandomStringUtils.randomNumeric(5);
+      		line = line.substring(0, 2569) + tempExtTransRefID.trim() + line.substring(2584);  
+
+			if(transIdToken != &quot;0&quot;)
+			{
+      			line = line.substring(0, 171) + transIdToken + line.substring(194);
+      			//log.info (&quot;line after replacing tempExtTransRefID:&quot; + line);
+			}
+      	}
+     }
+	fstream.write(line + System.getProperty(&quot;line.separator&quot;));
+	count++;
+	
+   } 
+
+def footer = &quot;9999999999999999999999999999999999GF020D  &quot; + totalRecCount + &quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  &quot;;
+   fstream.write(footer + System.getProperty(&quot;line.separator&quot;));
+   
+   inputStream.close();
+   fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GenerateStatementFile-removing 90 transcode" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.lang.RandomStringUtils;
+//log.info(&quot;${eachline}&quot;);
+
+FileWriter fstream = new FileWriter(&quot;${DataFileFolder}&quot; +&quot;/P1CStmtVend.&quot; + &quot;${__time(MMddYY,)}&quot; +&quot;.txt&quot;);
+File sccSource = new File(&quot;${DataFileFolder}&quot; + &quot;/SCC/&quot; + &quot;${TemplateFile_Statement}&quot;); 
+
+File accountTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/scc_account_trans.csv&quot;);
+
+try {
+   FileInputStream inputStream = new FileInputStream(sccSource);
+   Scanner sc = new Scanner(inputStream, &quot;UTF-8&quot;);
+   FileInputStream inputStream_c = new FileInputStream(accountTokenFile);
+   Scanner sc_c = new Scanner(inputStream_c, &quot;UTF-8&quot;);
+   
+ 
+  def tempAccountToken = &quot;${DefaultAccountToken}&quot;;
+  tempAccountToken = tempAccountToken.padRight(16, &quot; &quot;);
+  def totalRecCount = (&quot;${RecordCount}&quot;).padLeft(8,&apos;0&apos;);	//&quot;0000007&quot;;
+  int intTotalRecCount = Integer.parseInt(&quot;${RecordCount}&quot;);
+
+  def count = 0;// &amp;&amp; count&lt;30
+  def currentTime =&quot;${__time(YYMMddhhmmss,)}&quot;;		//&quot;210202&quot; + &quot;${__time(hhmmss,)}&quot;
+  def tempLst;
+
+  while (sc.hasNextLine() &amp;&amp; count &lt; intTotalRecCount+1) {
+      String line = sc.nextLine();
+      line=line.replaceAll(&quot;${OldDate}&quot;,&quot;${__time(yyyyMMdd,)}&quot;)
+     //if(line.size()&gt;2000)
+	//		line= line.substring(0, 2000);
+	String subStr_invalidtranscode= line.substring(43,53);
+	if(subStr_invalidtranscode !=&quot;0009090+00&quot;)
+	{
+	if(line.startsWith(&quot;0&quot;))
+     {
+     	//log.info(line);
+     	String subStr_transtype1 = line.substring(271, 279);
+     	String subStr_transtype2 = line.substring(274,279);
+     	
+     	log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+		
+		//line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+		if (line.substring(28,37) == &quot;00000000+&quot;){
+			log.info(&quot;vivtest:&quot; + line.substring(28,37));
+			if(sc_c.hasNextLine()){	
+      			tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      			tempAccountToken = tempLst[0].trim().padRight(16, &quot; &quot;);
+      			//log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      			transIdToken = tempLst[1].trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+		}
+
+      		line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+      		
+      	if(subStr_transtype1 == &quot;GDPSTINT&quot; || subStr_transtype2 == &quot;GDPST&quot;)
+      	{
+      		log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+      		def tempExtTransRefID = RandomStringUtils.randomNumeric(10) + RandomStringUtils.randomNumeric(5);
+      		line = line.substring(0, 2569) + tempExtTransRefID.trim() + line.substring(2584);  
+
+      		line = line.substring(0, 171) + transIdToken + line.substring(194);
+      		//log.info (&quot;line after replacing tempExtTransRefID:&quot; + line);
+      	}
+     }
+	
+	fstream.write(line + System.getProperty(&quot;line.separator&quot;));
+	count++;
+	}
+	
+   } 
+
+def footer = &quot;9999999999999999999999999999999999GF020D  &quot; + totalRecCount + &quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  &quot;;
+   fstream.write(footer + System.getProperty(&quot;line.separator&quot;));
+   
+   inputStream.close();
+   fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="AccountToken_Only" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GenerateStatementFile-two input files" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import org.apache.jmeter.services.FileServer;
+import org.apache.commons.lang.RandomStringUtils;
+//log.info(&quot;${eachline}&quot;);
+
+FileWriter fstream = new FileWriter(&quot;${DataFileFolder}&quot; +&quot;/P1CStmtVend.&quot; + &quot;${__time(MMddYY,)}&quot; +&quot;.txt&quot;);
+File sccSource = new File(&quot;${DataFileFolder}&quot; + &quot;/SCC/&quot; + &quot;${TemplateFile_Statement}&quot;); 
+
+File accountTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/sccAccountToken.csv&quot;);
+File transTokenFile = new File(&quot;${DataFileFolder}&quot; + &quot;/sccTransToken.csv&quot;);
+
+
+try {
+   FileInputStream inputStream = new FileInputStream(sccSource);
+   Scanner sc = new Scanner(inputStream, &quot;UTF-8&quot;);
+   FileInputStream inputStream_c = new FileInputStream(accountTokenFile);
+   Scanner sc_c = new Scanner(inputStream_c, &quot;UTF-8&quot;);
+   FileInputStream inputStream_t = new FileInputStream(transTokenFile);
+   Scanner sc_t = new Scanner(inputStream_t, &quot;UTF-8&quot;);
+   
+ 
+  def tempAccountToken = &quot;${DefaultAccountToken}&quot;;
+  tempAccountToken = tempAccountToken.padRight(16, &quot; &quot;);
+  def totalRecCount = (&quot;${RecordCount}&quot;).padLeft(8,&apos;0&apos;);	//&quot;0000007&quot;;
+  int intTotalRecCount = Integer.parseInt(&quot;${RecordCount}&quot;);
+
+  def count = 0;// &amp;&amp; count&lt;30
+  def currentTime =&quot;${__time(YYMMddhhmmss,)}&quot;;		//&quot;210202&quot; + &quot;${__time(hhmmss,)}&quot;
+  def tempLst;
+
+  while (sc.hasNextLine() &amp;&amp; count &lt; intTotalRecCount+1) {
+      String line = sc.nextLine();
+      line=line.replaceAll(&quot;${OldDate}&quot;,&quot;${__time(yyyyMMdd,)}&quot;)
+     //if(line.size()&gt;2000)
+	//		line= line.substring(0, 2000);
+	
+	if(line.startsWith(&quot;0&quot;))
+     {
+     	//log.info(line);
+     	String subStr_transtype1 = line.substring(271, 279);
+     	String subStr_transtype2 = line.substring(274,279);
+     	//log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+
+		//set token for the first line
+		//line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+		/*String subStr_invalidtranscode= line.substring(43,53);
+		if(subStr_invalidtranscode ==&quot;0009090+00&quot;)
+		{
+			log.info(&quot;vivtest:&quot; + subStr_invalidtranscode);
+			
+			if(sc_c.hasNextLine()){	
+      			tempLst = sc_c.nextLine().split(&apos;,&apos;);
+      			tempAccountToken = tempLst[0].trim().padRight(16, &quot; &quot;);
+      			//log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      			transIdToken = tempLst[1].trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+		}
+		else */
+		if (line.substring(28,37) == &quot;00000000+&quot;){
+			log.info(&quot;vivtest:&quot; + line.substring(28,37));
+			
+			if(sc_c.hasNextLine()){	
+      			tempAccountToken = sc_c.nextLine().trim().padRight(16, &quot; &quot;);
+      			//log.info(&quot;tempAccountToken:&quot; + tempAccountToken);
+      			transIdToken = sc_t.nextLine().trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+
+		}else if(subStr_transtype1 == &quot;GDPSTINT&quot; || subStr_transtype2 == &quot;GDPST&quot;)
+		{
+			if(sc_t.hasNextLine()){	
+      			transIdToken = sc_t.nextLine().trim();
+      			//log.info(&quot;transIdToken:&quot; + transIdToken);
+      		}
+		}
+
+		line = line.substring(0, 12) + tempAccountToken + line.substring(28);  	//line.substring(0, 2)
+		
+      	if(subStr_transtype1 == &quot;GDPSTINT&quot; || subStr_transtype2 == &quot;GDPST&quot;)
+      	{
+      		log.info (&quot;subStr_transtype1:subStr_transtype2:&quot; + subStr_transtype1 + &quot;,&quot; + subStr_transtype2)
+      		def tempExtTransRefID = RandomStringUtils.randomNumeric(10) + RandomStringUtils.randomNumeric(5);
+      		line = line.substring(0, 2569) + tempExtTransRefID.trim() + line.substring(2584);  
+
+			if(transIdToken != &quot;0&quot;)
+			{
+      			line = line.substring(0, 171) + transIdToken + line.substring(194);
+      			//log.info (&quot;line after replacing tempExtTransRefID:&quot; + line);
+			}
+      	}
+     }
+	fstream.write(line + System.getProperty(&quot;line.separator&quot;));
+	count++;
+	
+   } 
+
+def footer = &quot;9999999999999999999999999999999999GF020D  &quot; + totalRecCount + &quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  &quot;;
+   fstream.write(footer + System.getProperty(&quot;line.separator&quot;));
+   
+   inputStream.close();
+   fstream.close();
+}catch (Throwable ex)
+{
+	log.error(&quot;Error in Apending results to output files&quot;, ex);
+	throw ex;
+}</stringProp>
+            </JSR223Sampler>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
